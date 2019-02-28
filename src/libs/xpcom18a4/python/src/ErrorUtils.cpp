@@ -55,7 +55,7 @@
 #endif
 #include "nspr.h" // PR_fprintf
 
-static char *PyTraceback_AsString(PyObject *exc_tb);
+static const char *PyTraceback_AsString(PyObject *exc_tb);
 
 // The internal helper that actually moves the
 // formatted string to the target!
@@ -358,7 +358,7 @@ nsresult PyXPCOM_SetCOMErrorFromPyException()
 */
 #define TRACEBACK_FETCH_ERROR(what) {errMsg = what; goto done;}
 
-char *PyTraceback_AsString(PyObject *exc_tb)
+const char *PyTraceback_AsString(PyObject *exc_tb)
 {
 	const char *errMsg = NULL; /* holds a local error message */
 	char *result = NULL; /* a valid, allocated result. */
@@ -438,9 +438,9 @@ char *PyTraceback_AsString(PyObject *exc_tb)
 
 	{ // a temp scope so I can use temp locals.
 #if PY_MAJOR_VERSION <= 2
-	char *tempResult = PyString_AsString(obResult);
+	const char *tempResult = PyString_AsString(obResult);
 #else
-	char *tempResult = PyUnicode_AsUTF8(obResult);
+	const char *tempResult = PyUnicode_AsUTF8(obResult);
 #endif
 	result = (char *)PyMem_Malloc(strlen(tempResult)+1);
 	if (result==NULL)

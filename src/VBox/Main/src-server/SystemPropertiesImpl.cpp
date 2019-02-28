@@ -1197,7 +1197,8 @@ HRESULT SystemProperties::i_setDefaultMachineFolder(const Utf8Str &strPath)
         // new default with VirtualBox 4.0: "$HOME/VirtualBox VMs"
         HRESULT rc = i_getUserHomeDirectory(path);
         if (FAILED(rc)) return rc;
-        path += RTPATH_SLASH_STR "VirtualBox VMs";
+        path += RTPATH_SLASH_STR ".VirtualBox";
+        path += RTPATH_SLASH_STR "Machines";
     }
 
     if (!RTPathStartsWithRoot(path.c_str()))

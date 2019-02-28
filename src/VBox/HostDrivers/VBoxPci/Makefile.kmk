@@ -27,6 +27,7 @@
 SUB_DEPTH = ../../../..
 include $(KBUILD_PATH)/subheader.kmk
 if1of ($(KBUILD_TARGET), linux)
+ ifdef VBOX_WITH_VBOXDRV
 
  ifdef VBOX_WITH_VBOXDRV
   #
@@ -73,6 +74,7 @@ $$(VBoxPci-src_0_OUTDIR)/Makefile: \
  endif
 	%$(QUIET2)$(APPEND) -t '$(PATH_TARGET)/VBoxPci-src-1.dep' 'VBoxPci/linux/Makefile_VBOX_HARDENED=$(VBOX_WITH_HARDENING)'
 
+ endif # VBOX_WITH_VBOXDRV
 endif # Supported platform.
 include $(FILE_KBUILD_SUB_FOOTER)
 

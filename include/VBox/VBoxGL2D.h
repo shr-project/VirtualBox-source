@@ -28,6 +28,7 @@
 #define __VBoxGLSupportInfo_h__
 
 #include <iprt/types.h>
+#include <GL/gl.h>
 
 typedef char GLchar;
 

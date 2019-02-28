@@ -103,6 +103,7 @@ BUILD_LIBXML2=
 BUILD_LIBCURL=
 BUILD_LIBSSL=
 BUILD_LIBVPX=
+BUILD_LIBOPUS=0
 PASSIVE_MESA=0
 CC="gcc"
 CC32=""
@@ -1614,7 +1615,7 @@ EOF
 #
 check_libopus()
 {
-  if [ -z "$BUILD_LIBOPUS" ]; then
+  if [ "$BUILD_LIBOPUS" -eq 1 ]; then
     test_header libopus
     if which_wrapper pkg-config > /dev/null; then
       libopus_ver=`pkg-config opus --modversion 2>> $LOG`

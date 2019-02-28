@@ -2805,7 +2805,7 @@ if [ "$OS" = "linux" ]; then
   check_compiler_h
   [ $ONLY_ADDITIONS -eq 0 -a "$BUILD_MACHINE" = "amd64" -a $WITH_VMMRAW -eq 1 ] && check_32bit
   # tools/common/makeself*
-  [ $OSE -ge 1 ] && check_makeself
+  ##[ $OSE -ge 1 ] && check_makeself
 fi
 
 [ -n "$SETUP_WINE" ] && setup_wine

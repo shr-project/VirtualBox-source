@@ -83,6 +83,7 @@
 #include <QtWidgets/qgraphicsitem.h>
 #include <QtWidgets/qgraphicslayoutitem.h>
 #include <QtWidgets/qgraphicswidget.h>
+#include <QtWidgets/qbuttongroup.h>
 #include <QtCore/QMetaType>
 #include <QtGui/qevent.h>
 #include <QtGui/qtouchdevice.h>

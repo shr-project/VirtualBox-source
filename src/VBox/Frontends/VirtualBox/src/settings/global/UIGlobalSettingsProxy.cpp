@@ -22,6 +22,7 @@
 /* Qt includes: */
 # include <QButtonGroup>
 # include <QRegExpValidator>
+# include <QButtonGroup>
 
 /* GUI includes: */
 # include "QIWidgetValidator.h"
